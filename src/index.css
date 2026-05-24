@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #8E248C; /* Deep Purple / Magenta from logo/van */
+  --color-secondary: #D81B60; /* Pink accent from van outline */
+  --color-cyan: #00BCD4; /* Cyan from logo */
+  --color-fresh: #4CAF50; /* Soft Green for freshness */
+  --color-soft-bg: #FDFBF7; /* Cream/White background */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-soft-bg text-slate-900 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-black tracking-tight;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-24 px-6 lg:px-8;
+  }
+
+  .heading-xl {
+    @apply text-5xl md:text-7xl lg:text-8xl;
+  }
+
+  .heading-lg {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all flex items-center justify-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-bold py-4 px-8 rounded-2xl hover:bg-primary/5 transition-all flex items-center justify-center gap-2;
+  }
+
+  .glass-card {
+    @apply rounded-[32px] backdrop-blur-md shadow-xl border border-white/20;
+  }
+
+  .bg-paw-pattern-container {
+    background-image: radial-gradient(#8E248C11 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+}
