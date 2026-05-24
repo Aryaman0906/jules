@@ -1,0 +1,16 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="url(#grad1)"/>
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8E248C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D81B60;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="pawPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M20 10C21.6569 10 23 8.65685 23 7C23 5.34315 21.6569 4 20 4C18.3431 4 17 5.34315 17 7C17 8.65685 18.3431 10 20 10ZM13 14C14.6569 14 16 12.6569 16 11C16 9.34315 14.6569 8 13 8C11.3431 8 10 9.34315 10 11C10 12.6569 11.3431 14 13 14ZM27 14C28.6569 14 30 12.6569 30 11C30 9.34315 28.6569 8 27 8C25.3431 8 24 9.34315 24 11C24 12.6569 25.3431 14 27 14ZM20 15C16.6863 15 14 17.6863 14 21C14 24.3137 16.6863 27 20 27C23.3137 27 26 24.3137 26 21C26 17.6863 23.3137 15 20 15Z" fill="white" fill-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#pawPattern)"/>
+  <circle cx="400" cy="300" r="150" fill="white" fill-opacity="0.1" />
+  <text x="400" y="320" font-family="Arial" font-size="120" text-anchor="middle" fill="white" fill-opacity="0.2">🐕</text>
+  <path d="M0 500 Q 200 450 400 500 T 800 500 V 600 H 0 V 500 Z" fill="white" fill-opacity="0.05"/>
+</svg>

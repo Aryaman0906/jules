@@ -1,111 +1,159 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Calendar, ShieldCheck, Truck, Clock, Heart } from 'lucide-react';
-import { BUSINESS_INFO } from '../constants/data';
+import { Phone, Calendar, ShieldCheck, Truck, Clock, Heart, MessageCircle } from 'lucide-react';
+import { BUSINESS_INFO, TRUST_STATS } from '../constants/data';
 
 const Hero: React.FC = () => {
-  const trustBadges = [
-    { icon: <Truck size={20} />, text: "Mobile Van Service" },
-    { icon: <Heart size={20} />, text: "Dogs & Cats" },
-    { icon: <Clock size={20} />, text: "9AM–9PM" },
-    { icon: <ShieldCheck size={20} />, text: "Hygienic Grooming" },
-  ];
-
   return (
-    <section className="relative min-h-screen pt-24 pb-12 flex items-center overflow-hidden bg-paw-pattern-container">
-      {/* Decorative Blobs */}
-      <div className="absolute top-20 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-20 -right-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl -z-10" />
+    <section className="relative min-h-[90vh] pt-32 pb-20 flex items-center overflow-hidden bg-paw-pattern-container">
+      {/* Parallax Blobs */}
+      <motion.div
+        animate={{
+          x: [0, 50, 0],
+          y: [0, 30, 0],
+          scale: [1, 1.1, 1]
+        }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        className="absolute top-20 -left-24 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10"
+      />
+      <motion.div
+        animate={{
+          x: [0, -40, 0],
+          y: [0, 60, 0],
+          scale: [1, 1.2, 1]
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        className="absolute bottom-20 -right-24 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[120px] -z-10"
+      />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-8"
-        >
-          <div className="inline-flex items-center gap-2 bg-white/80 border border-primary/20 px-4 py-2 rounded-full shadow-sm">
-            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-bold text-primary uppercase tracking-wider">Premium Pet Grooming</span>
-          </div>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-10"
+          >
+            <div className="inline-flex items-center gap-2 bg-white/80 border border-primary/20 px-5 py-2.5 rounded-full shadow-sm backdrop-blur-sm">
+              <span className="flex h-2.5 w-2.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-xs font-black text-primary uppercase tracking-[0.2em]">Premium Pet Grooming</span>
+            </div>
 
-          <h1 className="heading-xl text-slate-900">
-            Premium Pet Grooming <br />
-            <span className="text-primary">at Your Doorstep</span>
-          </h1>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 leading-[0.95] tracking-tighter">
+              Gentle Care <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient-flow">at Your Doorstep</span>
+            </h1>
 
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl">
-            Hum Tum Aur Poonch brings safe, hygienic and loving grooming care for dogs and cats through our fully-equipped mobile grooming van.
-          </p>
+            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-xl font-medium">
+              Hum Tum Aur Poonch brings professional, safe, and loving grooming care for your furry family members through our fully-equipped mobile van.
+            </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a href="#booking" className="btn-primary">
-              <Calendar size={20} /> Book Grooming
-            </a>
-            <a href={`tel:${BUSINESS_INFO.phone}`} className="btn-outline">
-              <Phone size={20} /> Call Now
-            </a>
-          </div>
+            <div className="flex flex-wrap gap-5">
+              <a href="#booking" className="group relative btn-primary py-5 px-10 overflow-hidden">
+                <div className="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <Calendar size={22} className="relative z-10" />
+                <span className="relative z-10">Book Grooming</span>
+              </a>
+              <a href={`tel:${BUSINESS_INFO.phone}`} className="btn-outline py-5 px-10 border-slate-200 text-slate-900 hover:border-primary">
+                <Phone size={22} /> Call Now
+              </a>
+            </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8">
-            {trustBadges.map((badge, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-                className="flex flex-col items-center text-center p-3 glass-card bg-white/40"
-              >
-                <div className="text-primary mb-2 bg-primary/10 p-2 rounded-full">
-                  {badge.icon}
+            <div className="pt-8 border-t border-slate-100">
+              <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">Trusted By Pet Parents</p>
+              <div className="flex flex-wrap gap-8 items-center">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+                    <Truck size={24} />
+                  </div>
+                  <span className="text-sm font-black text-slate-700">Mobile Van</span>
                 </div>
-                <span className="text-xs font-bold text-slate-700 uppercase tracking-tight">
-                  {badge.text}
-                </span>
-              </motion.div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary">
+                    <Heart size={24} />
+                  </div>
+                  <span className="text-sm font-black text-slate-700">Dogs & Cats</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-fresh/10 rounded-2xl flex items-center justify-center text-fresh">
+                    <ShieldCheck size={24} />
+                  </div>
+                  <span className="text-sm font-black text-slate-700">100% Hygienic</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="relative lg:ml-10"
+          >
+            {/* Floating Badges */}
+            <motion.div
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-10 -right-4 z-20 glass-card p-6 bg-white/90 flex items-center gap-4 shadow-2xl"
+            >
+              <div className="bg-primary/20 p-3 rounded-2xl text-primary">
+                <MessageCircle size={32} />
+              </div>
+              <div>
+                <div className="text-xs font-black text-slate-400 uppercase tracking-widest">WhatsApp</div>
+                <div className="text-lg font-black text-slate-900 leading-tight">Quick Booking</div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute -bottom-10 -left-10 z-20 glass-card p-6 bg-white/90 flex items-center gap-4 shadow-2xl"
+            >
+              <div className="bg-fresh/20 p-3 rounded-2xl text-fresh">
+                <Clock size={32} />
+              </div>
+              <div>
+                <div className="text-xs font-black text-slate-400 uppercase tracking-widest">Available</div>
+                <div className="text-lg font-black text-slate-900 leading-tight">9AM - 9PM</div>
+              </div>
+            </motion.div>
+
+            <div className="relative rounded-[60px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(142,36,140,0.3)] group bg-white p-4">
+              <div className="relative rounded-[48px] overflow-hidden bg-slate-100 aspect-[4/3]">
+                <img
+                  src="/assets/humtum-bus.png"
+                  alt="Hum Tum Aur Poonch Mobile Grooming Van"
+                  className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/10 mix-blend-overlay" />
+              </div>
+            </div>
+
+            {/* Background Paw Decor */}
+            <div className="absolute -bottom-20 -right-20 -z-10 text-primary/5 select-none">
+              <svg width="300" height="300" viewBox="0 0 100 100" fill="currentColor">
+                <path d="M50 20c2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-14 8c2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm28 0c2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-14 12c-6.6 0-12 5.4-12 12s5.4 12 12 12 12-5.4 12-12-5.4-12-12-12z" />
+              </svg>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Trust Strip */}
+      <div className="absolute bottom-0 left-0 right-0 bg-white/50 backdrop-blur-md border-t border-slate-100 py-6 hidden md:block">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex justify-between items-center text-sm font-black text-slate-400 uppercase tracking-[0.2em]">
+            {TRUST_STATS.map((stat, i) => (
+              <div key={i} className="flex items-center gap-4">
+                <span className="text-primary">•</span>
+                <span>{stat.label}</span>
+                <span className="text-slate-900 ml-1">{stat.value}</span>
+              </div>
             ))}
+            <span className="text-primary">•</span>
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="relative"
-        >
-          {/* Floating Cards for premium feel */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-6 -left-6 z-10 glass-card p-4 hidden sm:flex items-center gap-3"
-          >
-            <div className="bg-fresh/20 p-2 rounded-full text-fresh">
-              <ShieldCheck size={24} />
-            </div>
-            <div className="text-sm font-bold">100% Hygienic</div>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -bottom-6 -right-6 z-10 glass-card p-4 hidden sm:flex items-center gap-3"
-          >
-            <div className="bg-secondary/20 p-2 rounded-full text-secondary">
-              <Heart size={24} />
-            </div>
-            <div className="text-sm font-bold">Gentle Care</div>
-          </motion.div>
-
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
-            <img
-              src="/assets/humtum-bus.png"
-              alt="Hum Tum Aur Poonch Mobile Grooming Van"
-              className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
-            />
-            {/* Gradient Overlay for better logo visibility if needed */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent pointer-events-none" />
-          </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

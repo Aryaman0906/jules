@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #8E248C; /* Deep Purple / Magenta from logo/van */
-  --color-secondary: #D81B60; /* Pink accent from van outline */
-  --color-cyan: #00BCD4; /* Cyan from logo */
-  --color-fresh: #4CAF50; /* Soft Green for freshness */
-  --color-soft-bg: #FDFBF7; /* Cream/White background */
+  --color-primary: #8E248C;
+  --color-secondary: #D81B60;
+  --color-cyan: #00BCD4;
+  --color-fresh: #4CAF50;
+  --color-soft-bg: #FDFBF7;
 }
 
 @layer base {
@@ -16,7 +16,7 @@
   }
 
   body {
-    @apply bg-soft-bg text-slate-900 font-sans antialiased;
+    @apply bg-soft-bg text-slate-900 font-sans antialiased overflow-x-hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -26,31 +26,49 @@
 
 @layer components {
   .section-padding {
-    @apply py-24 px-6 lg:px-8;
-  }
-
-  .heading-xl {
-    @apply text-5xl md:text-7xl lg:text-8xl;
+    @apply py-32 px-6 lg:px-8;
   }
 
   .heading-lg {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tighter;
   }
 
   .btn-primary {
-    @apply bg-primary text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all flex items-center justify-center gap-2;
+    @apply bg-primary text-white font-black py-4 px-8 rounded-2xl shadow-[0_20px_40px_-10px_rgba(142,36,140,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(142,36,140,0.4)] hover:bg-primary/90 transition-all flex items-center justify-center gap-3 uppercase tracking-widest text-sm;
   }
 
   .btn-outline {
-    @apply border-2 border-primary text-primary font-bold py-4 px-8 rounded-2xl hover:bg-primary/5 transition-all flex items-center justify-center gap-2;
+    @apply border-2 border-primary/20 text-primary font-black py-4 px-8 rounded-2xl hover:bg-primary/5 hover:border-primary/40 transition-all flex items-center justify-center gap-3 uppercase tracking-widest text-sm;
   }
 
   .glass-card {
-    @apply rounded-[32px] backdrop-blur-md shadow-xl border border-white/20;
+    @apply rounded-[40px] backdrop-blur-xl shadow-2xl border border-white/40;
   }
 
   .bg-paw-pattern-container {
-    background-image: radial-gradient(#8E248C11 1px, transparent 1px);
-    background-size: 30px 30px;
+    background-image: radial-gradient(#8E248C08 1px, transparent 1px);
+    background-size: 40px 40px;
   }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-soft-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full border-4 border-soft-bg hover:bg-slate-300;
+}
+
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-flow {
+  background-size: 200% 200%;
+  animation: gradient-flow 6s linear infinite;
 }
