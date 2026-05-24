@@ -11,9 +11,9 @@ This is a premium, modern, and responsive website built for **Hum Tum Aur Poonch
 
 ## Tech Stack
 - **React 19**
-- **Vite**
+- **Vite 6**
 - **TypeScript**
-- **Tailwind CSS**
+- **Tailwind CSS 3**
 - **Framer Motion** (Animations)
 - **Lucide React** (Icons)
 
@@ -23,7 +23,10 @@ This is a premium, modern, and responsive website built for **Hum Tum Aur Poonch
 Make sure you have [Node.js](https://nodejs.org/) installed.
 
 ### Installation
-1. Clone the repository or download the files.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Aryaman0906/jules.git
+   ```
 2. Open your terminal in the project folder.
 3. Install dependencies:
    ```bash
@@ -50,23 +53,32 @@ To preview the generated build locally:
 npm run preview
 ```
 
+## Deployment
+
+### Vercel / Netlify
+1. Connect your GitHub repository to **Vercel** or **Netlify**.
+2. Use the following build settings:
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+   - **Install Command:** `npm install`
+3. Click **Deploy**.
+
 ## How to Update Content
 
-Most of the website's content, including pricing, services, and business details, can be updated in a single file:
-
-`src/constants/data.ts`
+Most of the website's content can be updated in a single file: `src/constants/data.ts`.
 
 In this file, you can easily change:
-- **Phone number and Email**
-- **Service lists and descriptions**
-- **Pricing for different dog sizes and cats**
-- **Testimonials**
-- **Working hours**
+- **Contact Info:** Phone number, Email, and Working hours.
+- **Pricing:** Update rates for Small, Medium, Large dogs and Cats.
+- **Services:** Modify service names and descriptions.
+- **Testimonials:** Add or update client reviews.
+- **Gallery:** Update placeholders with real client images.
 
-## Images
-- The brand van image is located at `public/assets/humtum-bus.png`.
-- Favicon is at `public/favicon.svg`.
-- You can add more gallery images to `public/assets/` and update `src/constants/data.ts` to include them.
+## Assets
+- **Brand Van Image:** Located at `public/assets/humtum-bus.png`.
+- **Favicon:** Located at `public/favicon.svg`.
+- **Icons:** Powered by Lucide React.
+- **Animations:** Managed via Framer Motion.
 
-## Deployment
-This project is ready to be deployed to platforms like **Vercel**, **Netlify**, or **GitHub Pages**. Simply connect your repository and set the build command to `npm run build` and the output directory to `dist`.
+## License
+This project is for private use by Hum Tum Aur Poonch.
