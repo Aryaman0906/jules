@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, PawPrint } from 'lucide-react';
-import { BUSINESS_INFO } from '../constants/data';
+import { Menu, X } from 'lucide-react';
+import { BUSINESS_INFO, BRAND_ASSETS } from '../constants/data';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,12 +28,14 @@ const Navbar: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <a href="#" className="flex items-center gap-2">
-            <span className="text-2xl font-black tracking-tight flex items-center">
-              <span className="text-primary">Hum Tum Aur</span>
-              <span className="text-secondary ml-1.5">Poonch</span>
-              <PawPrint className="text-secondary ml-1" size={24} fill="currentColor" />
-            </span>
+          <a href="#" className="flex items-center">
+            <div className="bg-white rounded-xl p-1.5 shadow-sm border border-slate-100 flex items-center justify-center">
+              <img
+                src={BRAND_ASSETS.logo}
+                alt={`${BUSINESS_INFO.name} Logo`}
+                className="h-10 md:h-12 w-auto object-contain"
+              />
+            </div>
           </a>
 
           {/* Desktop Links */}

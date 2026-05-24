@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Calendar, ShieldCheck, Truck, Clock, Heart, MessageCircle } from 'lucide-react';
-import { BUSINESS_INFO, TRUST_STATS } from '../constants/data';
+import { BUSINESS_INFO, TRUST_STATS, BRAND_ASSETS } from '../constants/data';
 
 const Hero: React.FC = () => {
   return (
@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
             <div className="relative rounded-[60px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(142,36,140,0.3)] group bg-white p-4">
               <div className="relative rounded-[48px] overflow-hidden bg-slate-100 aspect-[4/3]">
                 <img
-                  src="/assets/humtum-bus.png"
+                  src={BRAND_ASSETS.busImage}
                   alt="Hum Tum Aur Poonch Mobile Grooming Van"
                   className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110"
                 />

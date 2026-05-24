@@ -1,3 +1,9 @@
+export const BRAND_ASSETS = {
+  logo: "/assets/logo.png",
+  busImage: "/assets/humtum-bus.png",
+  favicon: "/favicon.svg",
+};
+
 export const BUSINESS_INFO = {
   name: "Hum Tum Aur Poonch",
   tagline: "Because your pet deserves gentle care.",

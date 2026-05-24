@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CalendarCheck, MapPin, Sparkles, MessageCircle, Truck, Heart } from 'lucide-react';
+import { BRAND_ASSETS } from '../constants/data';
 
 const MobileVan: React.FC = () => {
   const steps = [
@@ -85,7 +86,7 @@ const MobileVan: React.FC = () => {
           >
             <div className="relative rounded-[60px] overflow-hidden border-[16px] border-white/5 shadow-2xl">
               <img
-                src="/assets/humtum-bus.png"
+                src={BRAND_ASSETS.busImage}
                 alt="Mobile Grooming Van Interior"
                 className="w-full aspect-[4/5] object-cover"
               />

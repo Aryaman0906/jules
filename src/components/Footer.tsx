@@ -1,6 +1,6 @@
 import React from 'react';
-import { PawPrint, Instagram, Facebook, Mail, Phone, Heart } from 'lucide-react';
-import { BUSINESS_INFO } from '../constants/data';
+import { Instagram, Facebook, Mail, Phone, Heart } from 'lucide-react';
+import { BUSINESS_INFO, BRAND_ASSETS } from '../constants/data';
 
 const Footer: React.FC = () => {
   return (
@@ -8,11 +8,14 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           <div className="space-y-8 lg:col-span-2">
-            <a href="#" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
-                <PawPrint size={28} />
+            <a href="#" className="flex items-center">
+              <div className="bg-white rounded-xl p-2 shadow-sm border border-slate-100 flex items-center justify-center">
+                <img
+                  src={BRAND_ASSETS.logo}
+                  alt={`${BUSINESS_INFO.name} Logo`}
+                  className="h-12 w-auto object-contain"
+                />
               </div>
-              <span className="text-2xl font-black text-slate-900 tracking-tighter">Hum Tum Aur Poonch</span>
             </a>
             <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-md">
               Bringing premium, professional, and loving pet grooming services right to your doorstep with our state-of-the-art mobile van.

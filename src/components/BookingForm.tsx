@@ -22,16 +22,16 @@ const BookingForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const message = `*New Booking Request - Hum Tum Aur Poonch*%0A%0A` +
-      `*Owner:* ${formData.ownerName}%0A` +
-      `*Phone:* ${formData.phone}%0A` +
-      `*Pet:* ${formData.petType} (${formData.petSize})%0A` +
-      `*Service:* ${formData.service}%0A` +
-      `*Preferred Date:* ${formData.date}%0A` +
-      `*Address:* ${formData.address}%0A` +
-      `*Notes:* ${formData.notes}`;
+    const message = `*New Booking Request - Hum Tum Aur Poonch*\n\n` +
+      `*Owner:* ${formData.ownerName}\n` +
+      `*Phone:* ${formData.phone}\n` +
+      `*Pet:* ${formData.petType} (${formData.petSize})\n` +
+      `*Service:* ${formData.service}\n` +
+      `*Preferred Date:* ${formData.date}\n` +
+      `*Address:* ${formData.address}\n` +
+      `*Notes:* ${formData.notes || 'None'}`;
 
-    window.open(`https://wa.me/${BUSINESS_INFO.whatsapp}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${BUSINESS_INFO.whatsapp}?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (

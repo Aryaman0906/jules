@@ -67,7 +67,16 @@ npm run preview
 
 Most of the website's content can be updated in a single file: `src/constants/data.ts`.
 
-In this file, you can easily change:
+### How to Change Logo
+To update the business logo on the website, you can:
+1. **Replace the file:** Overwrite `public/assets/logo.png` with your new logo file (keep the same name).
+2. **Update via Code:**
+   - Upload your new logo to the `public/assets/` folder.
+   - Open `src/constants/data.ts`.
+   - Update the `BRAND_ASSETS.logo` path to point to your new file.
+
+### Updating Other Content
+In `src/constants/data.ts`, you can easily change:
 - **Contact Info:** Phone number, Email, and Working hours.
 - **Pricing:** Update rates for Small, Medium, Large dogs and Cats.
 - **Services:** Modify service names and descriptions.
