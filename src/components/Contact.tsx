@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, Clock, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Phone, Mail, Clock, MapPin, Instagram, Facebook, MessageCircle } from 'lucide-react';
 import { BUSINESS_INFO } from '../constants/data';
 
 const Contact: React.FC = () => {
