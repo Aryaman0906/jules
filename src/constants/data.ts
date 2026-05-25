@@ -2,39 +2,48 @@ export const BRAND_ASSETS = {
   logo: "/assets/logo.png",
   busImage: "/assets/humtum-bus.png",
   favicon: "/favicon.svg",
+  placeholderImage: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=800", // High quality pet photo
 };
 
 export const BUSINESS_INFO = {
   name: "Hum Tum Aur Poonch",
-  tagline: "Because your pet deserves gentle care.",
+  tagline: "Premium Mobile Pet Grooming at Your Doorstep",
+  mission: "Because your pet deserves gentle care without the stress of travel.",
   phone: "+917973716667",
   phoneDisplay: "+91 79-73716667",
   whatsapp: "917973716667",
   email: "humtumaurpoonch254@gmail.com",
   hours: "9AM–9PM",
   serviceArea: "Mobile grooming van service around the city",
+  location: "Chandigarh, Panchkula & Mohali", // Replace with actual coverage
 };
 
 export const TRUST_STATS = [
-  { label: "Mobile Van Service", value: "At Your Doorstep" },
-  { label: "Pets Groomed", value: "5000+" },
-  { label: "Service Hours", value: "9AM - 9PM" },
-  { label: "Hygienic Care", value: "100% Safe" },
+  { label: "Mobile Van Service", value: "At Your Doorstep", icon: "Truck" },
+  { label: "Pets Groomed", value: "5000+", icon: "Dog", note: "Replace with verified business number" },
+  { label: "Service Hours", value: "9AM - 9PM", icon: "Clock" },
+  { label: "Hygienic Care", value: "100% Safe", icon: "ShieldCheck" },
 ];
 
 export const SERVICES = [
   {
     id: "full-grooming",
     title: "Full Grooming",
-    description: "The complete transformation. Includes bath, haircut, nail clipping, ear cleaning, and styling.",
+    description: "The complete transformation. A head-to-paw makeover that leaves your pet looking and feeling spectacular.",
+    bestFor: "Pets needing a total refresh or breed-standard styling.",
+    inclusions: ["Bath & Blow Dry", "Full Body Haircut", "Nail Clipping", "Ear Cleaning", "Eye Cleaning", "Perfume & Accessories"],
+    duration: "120 - 150 mins",
     icon: "Scissors",
-    badge: "Popular",
+    badge: "Most Popular",
     category: "Full Service"
   },
   {
     id: "regular-bath",
     title: "Regular Bath",
-    description: "Deep cleansing bath with premium shampoos and blow-dry to keep your pet fresh.",
+    description: "Deep cleansing bath using premium, pH-balanced shampoos to maintain a healthy coat and skin.",
+    bestFor: "Maintaining hygiene between full grooming sessions.",
+    inclusions: ["Deep Cleansing Bath", "Blow Dry", "Brushing", "Nail Clipping", "Ear Cleaning"],
+    duration: "60 - 90 mins",
     icon: "Bath",
     badge: "Essential",
     category: "Hygiene"
@@ -42,7 +51,10 @@ export const SERVICES = [
   {
     id: "medical-bath",
     title: "Medical Bath",
-    description: "Specialized medicated baths for pets with skin issues or allergies.",
+    description: "Specialized medicated baths designed to treat skin infections, allergies, and hot spots.",
+    bestFor: "Pets with sensitive skin or skin-related medical issues.",
+    inclusions: ["Medicated Soak", "Gentle Drying", "Skin Inspection", "Vet-Approved Products"],
+    duration: "75 - 100 mins",
     icon: "Stethoscope",
     badge: "Care",
     category: "Health"
@@ -50,23 +62,32 @@ export const SERVICES = [
   {
     id: "aroma-spa",
     title: "Aroma Spa",
-    description: "Relaxing spa session with essential oils for a stress-free grooming experience.",
+    description: "A soothing experience with essential oils and massage techniques to destress and rejuvenate.",
+    bestFor: "Senior pets or anxious pets needing relaxation.",
+    inclusions: ["Aromatherapy Bath", "Pet Massage", "Essential Oil Finish", "Stress-Relief Environment"],
+    duration: "90 - 120 mins",
     icon: "Sparkles",
     badge: "Luxury",
     category: "Spa"
   },
   {
     id: "tick-removal",
-    title: "Tick Removal",
-    description: "Professional and safe removal of ticks and fleas to protect your pet's health.",
+    title: "Tick & Flea Removal",
+    description: "Professional removal and treatment to eliminate parasites and prevent future infestations.",
+    bestFor: "Pets struggling with ticks or fleas.",
+    inclusions: ["Manual Tick Removal", "Anti-Tick Bath", "Flea Powder Application", "Preventive Consultation"],
+    duration: "60 - 120 mins",
     icon: "ShieldAlert",
     badge: "Vital",
     category: "Health"
   },
   {
     id: "haircut",
-    title: "Haircut",
-    description: "Breed-specific or custom haircuts to keep your pet looking sharp and comfortable.",
+    title: "Custom Haircut",
+    description: "Whether it's a summer cut or a breed-specific style, our groomers deliver perfection.",
+    bestFor: "Managing coat length and preventing matting.",
+    inclusions: ["Style Consultation", "Hair Trimming", "Finishing Scissor Work", "Sanitary Cut"],
+    duration: "90 - 120 mins",
     icon: "Palette",
     badge: "Style",
     category: "Full Service"
@@ -121,6 +142,29 @@ export const CAT_PRICES = [
   { item: "Hygiene Cut", price: 300 },
 ];
 
+export const BEFORE_AFTER_DATA = [
+  {
+    id: 1,
+    petName: "Buddy",
+    breed: "Shih Tzu",
+    service: "Full Grooming",
+    story: "Buddy came in with heavily matted fur. We gave him a clean, comfortable summer cut and a soothing bath.",
+    before: "/assets/before-after/buddy-before.jpg", // Replace with real photo
+    after: "/assets/before-after/buddy-after.jpg",   // Replace with real photo
+    type: "Dogs"
+  },
+  {
+    id: 2,
+    petName: "Snowy",
+    breed: "Persian Cat",
+    service: "Bath + Haircut",
+    story: "Snowy needed a professional deshedding and a hygiene trim to stay cool and clean.",
+    before: "/assets/before-after/snowy-before.jpg", // Replace with real photo
+    after: "/assets/before-after/snowy-after.jpg",   // Replace with real photo
+    type: "Cats"
+  }
+];
+
 export const GALLERY_DATA = [
   {
     id: 1,
@@ -130,7 +174,7 @@ export const GALLERY_DATA = [
     petType: "Golden Retriever",
     service: "Full Grooming",
     badge: "Best Seller",
-    image: "/assets/gallery/happy-dog-grooming.svg",
+    image: "/assets/gallery/gallery-1.jpg", // Replace with real client photo
     color: "#8E248C",
     size: "large"
   },
@@ -142,57 +186,64 @@ export const GALLERY_DATA = [
     petType: "Persian Cat",
     service: "Aroma Spa",
     badge: "Luxury",
-    image: "/assets/gallery/aroma-spa-session.svg",
+    image: "/assets/gallery/gallery-2.jpg", // Replace with real client photo
     color: "#D81B60",
     size: "medium"
+  }
+];
+
+export const TEAM_DATA = [
+  {
+    id: 1,
+    name: "Rahul",
+    role: "Senior Pet Groomer",
+    specialty: "Dog Styling & Hygiene",
+    bio: "Rahul has over 5 years of experience handling all dog breeds with love and patience.",
+    image: "/assets/team/team-1.jpg" // Replace with real team photo
   },
   {
-    id: 3,
-    title: "Clean & Fresh Bath",
-    subtitle: "Hygiene Bath",
-    description: "Refreshing medicated bath session for optimal skin health and coat shine.",
-    petType: "Beagle",
-    service: "Medical Bath",
-    badge: "Fresh",
-    image: "/assets/gallery/fresh-bath.svg",
-    color: "#00BCD4",
-    size: "medium"
+    id: 2,
+    name: "Sunita",
+    role: "Cat Specialist",
+    specialty: "Cat Grooming & Massage",
+    bio: "Sunita is our resident cat whisperer, ensuring even the most nervous cats feel safe.",
+    image: "/assets/team/team-2.jpg" // Replace with real team photo
+  }
+];
+
+export const FAQS = [
+  {
+    question: "Do you groom pets at home?",
+    answer: "Yes! We bring our fully-equipped mobile grooming van to your doorstep. All grooming happens inside the van, keeping your home clean."
   },
   {
-    id: 4,
-    title: "Stylish Summer Cut",
-    subtitle: "Custom Haircut",
-    description: "Keeping it cool and stylish with a custom summer trim at the pet's doorstep.",
-    petType: "Poodle",
-    service: "Haircut",
-    badge: "Style",
-    image: "/assets/gallery/stylish-haircut.svg",
-    color: "#4CAF50",
-    size: "small"
+    question: "Is it safe for nervous pets?",
+    answer: "Absolutely. Our groomers are trained in gentle handling techniques. Since your pet is right outside their home, they feel much safer than at a busy salon."
   },
   {
-    id: 5,
-    title: "Doorstep Convenience",
-    subtitle: "Mobile Van Service",
-    description: "Our fully-equipped van arriving at a client's location for a safe grooming session.",
-    petType: "All Pets",
-    service: "Mobile Van",
-    badge: "Convenient",
-    image: "/assets/gallery/mobile-van-grooming.svg",
-    color: "#8E248C",
-    size: "small"
+    question: "Do you groom cats?",
+    answer: "Yes, we have specialists who handle cats with extreme care, providing baths, haircuts, and nail trimming."
   },
   {
-    id: 6,
-    title: "Purr-fectly Clean",
-    subtitle: "Cat Care Session",
-    description: "Gentle handling and thorough cleaning for a happy and healthy cat.",
-    petType: "Domestic Shorthair",
-    service: "Regular Bath",
-    badge: "Gentle",
-    image: "/assets/gallery/clean-cat-care.svg",
-    color: "#D81B60",
-    size: "small"
+    question: "How long does grooming take?",
+    answer: "Depending on the service and pet size, it usually takes between 1 to 2.5 hours."
+  }
+];
+
+export const SERVICE_AREAS = [
+  "Sector 1 - 60", "Mohali Phase 1 - 11", "Zirakpur", "Panchkula Sectors", "Kharar"
+];
+
+export const BLOG_PREVIEWS = [
+  {
+    title: "How often should your dog be groomed?",
+    excerpt: "Learn about the ideal grooming frequency based on your dog's breed and coat type.",
+    image: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    title: "Signs your cat needs professional grooming",
+    excerpt: "Is your cat over-grooming or developing mats? It might be time for a professional session.",
+    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=400"
   }
 ];
 
@@ -202,20 +253,15 @@ export const TESTIMONIALS = [
     pet: "Bruno (Golden Retriever)",
     text: "The best grooming service in the city! Bruno is usually very scared of baths, but the team was so gentle. The mobile van is a lifesaver.",
     rating: 5,
-    service: "Full Grooming"
+    service: "Full Grooming",
+    image: "/assets/reviews/review-1.jpg" // Replace with real photo
   },
   {
     name: "Vikram Singh",
     pet: "Bella (Persian Cat)",
     text: "Finding a good cat groomer was hard until I found Hum Tum Aur Poonch. They handled Bella with so much care. Highly recommend their Aroma Spa!",
     rating: 5,
-    service: "Aroma Spa"
-  },
-  {
-    name: "Priya Patel",
-    pet: "Rocky (Beagle)",
-    text: "Super convenient and professional. The van is very well-equipped and clean. Rocky looks and smells great after every session.",
-    rating: 5,
-    service: "Regular Bath"
+    service: "Aroma Spa",
+    image: "/assets/reviews/review-2.jpg" // Replace with real photo
   }
 ];

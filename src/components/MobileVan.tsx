@@ -6,83 +6,78 @@ import { BRAND_ASSETS } from '../constants/data';
 const MobileVan: React.FC = () => {
   const steps = [
     {
-      icon: <MessageCircle size={32} />,
-      title: "Book via WhatsApp",
-      description: "Send us your pet's details and preferred slot. We'll confirm your booking instantly.",
+      icon: <CalendarCheck size={32} />,
+      title: "Book a Slot",
+      description: "Request a time through our website or WhatsApp. We'll confirm your session instantly.",
       color: "bg-primary"
     },
     {
       icon: <Truck size={32} />,
       title: "Van Arrives",
-      description: "Our professional, sanitized grooming van arrives at your doorstep on time.",
+      description: "Our fully-equipped grooming van reaches your doorstep at the scheduled time.",
       color: "bg-secondary"
     },
     {
-      icon: <Heart size={32} />,
-      title: "Grooming & Love",
-      description: "Your pet gets pampered by expert groomers in a stress-free environment.",
+      icon: <Sparkles size={32} />,
+      title: "Pet Groomed",
+      description: "Your pet gets safe, hygienic, and professional grooming right outside your home.",
       color: "bg-fresh"
     }
   ];
 
   return (
-    <section id="mobile-van" className="section-padding bg-slate-900 text-white relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10">
-        <div className="absolute -top-24 -left-24 w-96 h-96 border-[40px] border-primary rounded-full" />
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 border-[40px] border-secondary rounded-full" />
-      </div>
+    <section id="mobile-van" className="section-padding bg-white relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-full bg-paw-pattern opacity-[0.03] -z-10" />
+      <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-10"
-          >
-            <div>
-              <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white text-xs font-black uppercase tracking-[0.2em] mb-6">
-                Mobile Grooming Van
+      <div className="container-wide">
+        <div className="text-center max-w-3xl mx-auto mb-24 space-y-6">
+          <div className="badge-pill">How It Works</div>
+          <h2 className="heading-lg text-slate-900">
+            Professional Grooming <br />
+            <span className="text-primary">Delivered to You</span>
+          </h2>
+          <p className="text-xl text-slate-600 font-medium">
+            No more stressful car rides or waiting rooms. We bring the entire grooming salon to your home.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
+          {/* Connector Line (Desktop) */}
+          <div className="hidden lg:block absolute top-[20%] left-0 w-full h-[2px] bg-slate-100 -z-10" />
+
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              className="relative flex flex-col items-center text-center space-y-8"
+            >
+              <div className={`w-24 h-24 rounded-[32px] ${step.color} text-white flex items-center justify-center shadow-2xl shadow-slate-200 relative z-10 group hover:scale-110 transition-transform duration-500`}>
+                {step.icon}
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-white text-slate-900 border-4 border-slate-50 flex items-center justify-center font-black text-sm">
+                  0{index + 1}
+                </div>
               </div>
-              <h2 className="heading-lg mb-8 leading-tight">
-                No Travel Stress. <br />
-                <span className="text-primary">Grooming Comes Home.</span>
-              </h2>
-              <p className="text-xl text-slate-400 font-medium leading-relaxed">
-                Why wait in stressful salons? Our fully-equipped, climate-controlled mobile grooming van provides a premium experience right in your driveway.
-              </p>
-            </div>
 
-            <div className="bg-white/5 rounded-[40px] p-8 md:p-12 border border-white/10">
-              <p className="text-2xl font-black mb-10 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                "No travel stress. No waiting rooms. <br /> Grooming comes home."
-              </p>
-
-              <div className="space-y-12">
-                {steps.map((step, index) => (
-                  <div key={index} className="flex gap-6 relative group">
-                    {index !== steps.length - 1 && (
-                      <div className="absolute left-8 top-16 bottom-[-32px] w-0.5 bg-white/10" />
-                    )}
-                    <div className={`shrink-0 w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center shadow-xl shadow-black/20 group-hover:scale-110 transition-transform`}>
-                      {step.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-black mb-2">{step.title}</h3>
-                      <p className="text-slate-400 font-medium leading-relaxed">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
+              <div className="space-y-4">
+                <h3 className="text-2xl font-black text-slate-900 uppercase tracking-widest">{step.title}</h3>
+                <p className="text-slate-500 font-medium leading-relaxed max-w-xs mx-auto">
+                  {step.description}
+                </p>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
+        </div>
 
+        <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative"
           >
             <div className="relative rounded-[60px] overflow-hidden border-[16px] border-white/5 shadow-2xl">
               <img
@@ -90,31 +85,46 @@ const MobileVan: React.FC = () => {
                 alt="Mobile Grooming Van Interior"
                 className="w-full aspect-[4/5] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
+            </div>
+          </motion.div>
 
-              <div className="absolute bottom-12 left-12 right-12 bg-white/10 backdrop-blur-xl rounded-[40px] p-10 border border-white/10">
-                <div className="flex items-center gap-6">
-                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shrink-0">
-                    <Sparkles size={32} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-black mb-1">State-of-the-art Equipment</h4>
-                    <p className="text-slate-300 text-sm font-medium">Safe, sanitized, and fully-equipped for all breeds.</p>
-                  </div>
-                </div>
-              </div>
+          <div className="space-y-12">
+            <div className="space-y-6">
+              <div className="badge-pill">Inside the Van</div>
+              <h2 className="heading-lg text-slate-900 leading-tight">
+                Safety & Hygiene <br />
+                <span className="text-secondary">Are Our Priority</span>
+              </h2>
+              <p className="text-xl text-slate-600 font-medium leading-relaxed">
+                Our van is designed to provide a calm and clinical environment for grooming. Every inch is sanitized between sessions.
+              </p>
             </div>
 
-            {/* Floating stats */}
-            <motion.div
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-20 -right-8 glass-card p-6 bg-primary shadow-2xl"
-            >
-              <div className="text-4xl font-black mb-1">5000+</div>
-              <div className="text-xs font-black uppercase tracking-widest text-white/70">Happy Pets Served</div>
-            </motion.div>
-          </motion.div>
+            <div className="space-y-8">
+              {[
+                { title: "Hot & Cold Water", desc: "Temperature controlled baths for comfort." },
+                { title: "Climate Control", desc: "AC/Heating to keep pets relaxed in all seasons." },
+                { title: "Full Power Backup", desc: "Silent generators for uninterrupted grooming." },
+                { title: "Sanitized Tools", desc: "UV-sterilized equipment for every pet." }
+              ].map((item, i) => (
+                <div key={i} className="flex gap-6 items-start group">
+                  <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                    <Heart size={24} fill="currentColor" />
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="font-black text-slate-900 uppercase tracking-widest text-sm">{item.title}</h4>
+                    <p className="text-slate-500 font-medium text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <a href="#booking" className="btn-primary py-5 px-12 group">
+              <MessageCircle size={22} className="group-hover:scale-110 transition-transform" />
+              Book the Van Now
+            </a>
+          </div>
         </div>
       </div>
     </section>

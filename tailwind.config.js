@@ -18,11 +18,17 @@ export default {
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
+        'gradient-flow': 'gradient-flow 6s linear infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
+        },
+        'gradient-flow': {
+          '0%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+          '100%': { 'background-position': '0% 50%' },
         }
       }
     },
